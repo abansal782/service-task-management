@@ -18,11 +18,11 @@ open class BaseModel(
 
     @Column(name = "ip_address")
     @JsonProperty("ip_address")
-    val ipAddress: String? = null,
+    var ipAddress: String? = null,
 
     @Column(name = "device_id")
     @JsonProperty("device_id")
-    val deviceId: String? = null,
+    var deviceId: String? = null,
 
     @Column(name = "created_at")
     @JsonProperty("created_at")
@@ -34,7 +34,7 @@ open class BaseModel(
 
     @Column(name = "updated_at")
     @JsonProperty("updated_at")
-     var updatedAt: Long? = null,
+    var updatedAt: Long? = null,
 
     @Column(name = "updated_by")
     @JsonProperty("updated_by")

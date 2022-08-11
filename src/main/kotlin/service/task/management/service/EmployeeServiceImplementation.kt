@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import service.task.management.model.Employee
 import service.task.management.repository.EmployeeRepository
+import java.time.Instant
 
 @Service
 class EmployeeServiceImplementation @Inject constructor (
@@ -16,6 +17,12 @@ class EmployeeServiceImplementation @Inject constructor (
     }
 
     override fun createEmployee(employee: Employee): Employee {
+        employee.createdAt = Instant.now().epochSecond
+        employee.updatedAt = Instant.now().epochSecond
+        employee.createdBy = "ashish"
+        employee.updatedBy = "ashish"
+        employee.deviceId = "macbook"
+        employee.ipAddress = "224.224.224.224"
         return employeeRepository.save(employee)
     }
 

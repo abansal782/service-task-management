@@ -34,8 +34,6 @@ class EmployeeController @Inject constructor(
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun createEmployee(@RequestBody employee: Employee): Employee{
-        employee.createdAt = Instant.now().epochSecond
-        employee.updatedAt = Instant.now().epochSecond
         val employeeDetails = employeeService.createEmployee(employee)
         log.info("Employee with id ${employeeDetails.id} created")
 
